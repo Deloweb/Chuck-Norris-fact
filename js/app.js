@@ -13,21 +13,23 @@ let facts = [
   "Chuck Norris connait la dernière décimale de Pi.",
   "Un jour, au restaurant, Chuck Norris a commandé un steak. Et le steak a obéi.",
 ];
-
-// Focntion changeText pour changer la Chuck Norris Fact
+    
+// Ici i nous sers d'historique 
+let i=0 ;
+// Fonction changeText pour changer la Chuck Norris Fact
 function changeText ()  {
-    fact.textContent = facts[i];
-    i++;
-    if(i===facts.length){
-        i=0;
+    // Génére un chiffre aléatoire entre 0 et 9
+    let x = Math.floor(Math.random()*10);
+    // Vérification si la valeur générée est la même que celle générée précédemment
+    if(x===i){
+        // Si oui, je rappelle la fonction
+        return changeText();
     }
+    // Changement du fact
+    fact.textContent = facts[x];
+    // Mise à jour de l'historique pour le prochain appel
+    i = x;
 }
-
-/* Même fonction mais les facts sont générés aléatoirement
-mais, il peut y avoir 2 fois le même fact à la suite */
-// function changeText ()  {
-//     fact.textContent = facts[Math.floor(Math.random()*10)];
-// }
 
 // Fonction générant trois couleurs aléatoires
 function changeColor () {
@@ -50,7 +52,6 @@ function changeColor () {
 }
 
 // On variabilise chaque éléments du DOM nécessaires
-let i=0
 let fact = document.querySelector("#fact");
 let button = document.querySelector("#button");
 let container = document.querySelector(".container");
