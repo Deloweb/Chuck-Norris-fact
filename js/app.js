@@ -11,7 +11,7 @@ let facts = [
   "Chuck Norris et Superman ont fait un bras de fer, le perdant devait mettre son slip par dessus son pantalon.",
   "Chuck Norris a déjà été sur Mars, c'est pour cela qu'il n'y a pas de signes de vie là bas.",
   "Chuck Norris connait la dernière décimale de Pi.",
-  "Un jour, au restaurant, Chuck Norris a commandé un steak. Et le steak a obéi.",
+  "Un jour, au restaurant, Chuck Norris a commandé un steak. Et le steak a obéi."
 ];
     
 // Ici i nous sers d'historique 
@@ -19,7 +19,7 @@ let i=0 ;
 // Fonction changeText pour changer la Chuck Norris Fact
 function changeText ()  {
     // Génére un chiffre aléatoire entre 0 et 9
-    let x = Math.floor(Math.random()*10);
+    let x = Math.floor(Math.random()*facts.length);
     // Vérification si la valeur générée est la même que celle générée précédemment
     if(x===i){
         // Si oui, je rappelle la fonction
